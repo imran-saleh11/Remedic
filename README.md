@@ -1,17 +1,21 @@
 # remedic
 
-A new Flutter project.
+Remedic is a modern medicine reminding app... 
 
-## Getting Started
+## Technologies used
 
-This project is a starting point for a Flutter application.
+- `Flutter`
+- `Firebase`
 
-A few resources to get you started if this is your first Flutter project:
+## Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+- Reminding you to take your medicines on time
+- Tracking your medicine cabinate
+...
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Running the project
+...
+
+## Video
+
+A live demo showing the app.
