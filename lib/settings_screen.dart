@@ -10,7 +10,6 @@ class SettingsScreen extends StatefulWidget {
 class _SettingsScreenState extends State<SettingsScreen> {
   bool _notifications = true;
   bool _darkMode = true;
-  bool _biometrics = false;
 
   @override
   Widget build(BuildContext context) {
@@ -39,16 +38,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
               _darkMode,
                   (val) => setState(() => _darkMode = val)
           ),
-          _buildSwitchTile(
-              Icons.fingerprint,
-              "Biometric Lock",
-              _biometrics,
-                  (val) => setState(() => _biometrics = val)
-          ),
 
           const SizedBox(height: 32),
           _sectionHeader("APP INFO"),
-          _buildLinkTile(Icons.info_outline, "About Remedic", "v1.0.4"),
+          _buildLinkTile(Icons.info_outline, "About Remedic", ""),
           _buildLinkTile(Icons.description_outlined, "Privacy Policy", ""),
           _buildLinkTile(Icons.help_outline, "Support Center", ""),
 
@@ -59,7 +52,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
             leading: const Icon(Icons.delete_outline, color: Colors.redAccent),
             title: const Text("Delete Account", style: TextStyle(color: Colors.redAccent)),
             onTap: () {
-              // Action for account deletion
             },
           ),
         ],

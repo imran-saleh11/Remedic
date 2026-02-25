@@ -1,6 +1,4 @@
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'splash_screen.dart';
 import 'login_screen.dart';
 import 'home_screen.dart';
@@ -11,14 +9,6 @@ import 'profile_screen.dart';
 import 'settings_screen.dart';
 
 void main() {
-  WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-    statusBarIconBrightness: Brightness.light,
-    systemNavigationBarColor: Colors.black,
-    systemNavigationBarIconBrightness: Brightness.light,
-  ));
-
   runApp(const RemedicApp());
 }
 
@@ -32,9 +22,9 @@ class RemedicApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         brightness: Brightness.dark,
-        scaffoldBackgroundColor: Colors.black,
+        scaffoldBackgroundColor: const Color(0x00000000),
         primaryColor: const Color(0xFFF5F5F5),
-        fontFamily: 'Georgia',
+        fontFamily: 'NotoSans',
         useMaterial3: true,
       ),
       home: const MainNavigationHost(),

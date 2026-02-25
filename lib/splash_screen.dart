@@ -16,14 +16,12 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
 
-    // start fade
     Future.delayed(const Duration(milliseconds: 200), () {
       setState(() {
         _visible = true;
       });
     });
 
-    // finish splash
     Timer(const Duration(seconds: 4), widget.onFinished);
   }
 
