@@ -10,37 +10,53 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  bool _visible = false;
+
   @override
   void initState() {
     super.initState();
-    Timer(const Duration(milliseconds: 2500), widget.onFinished);
+
+    // start fade
+    Future.delayed(const Duration(milliseconds: 200), () {
+      setState(() {
+        _visible = true;
+      });
+    });
+
+    // finish splash
+    Timer(const Duration(seconds: 4), widget.onFinished);
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
+      body: SafeArea(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              width: 100,
-              height: 100,
-              decoration: BoxDecoration(
-                border: Border.all(color: const Color(0xFFF5F5F5), width: 4),
-                borderRadius: BorderRadius.circular(24),
+            const Spacer(),
+            Center(
+              child: AnimatedOpacity(
+                opacity: _visible ? 1.0 : 0.0,
+                duration: const Duration(seconds: 2),
+                curve: Curves.easeIn,
+                child: Image.asset(
+                  'assets/logo.jpg',
+                  width: 280,
+                ),
               ),
-              child: const Icon(Icons.add_box_outlined, size: 50, color: Color(0xFFF5F5F5)),
             ),
-            const SizedBox(height: 24),
-            const Text(
-              'REMEDIC',
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 8,
-                color: Color(0xFFF5F5F5),
+            const Spacer(),
+            const Padding(
+              padding: EdgeInsets.only(bottom: 60),
+              child: Text(
+                'Remedic',
+                style: TextStyle(
+                  fontSize: 35,
+                  fontWeight: FontWeight.w600,
+                  color: Colors.white,
+                  letterSpacing: 1.2,
+                ),
               ),
             ),
           ],
