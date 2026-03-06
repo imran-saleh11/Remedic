@@ -1,4 +1,4 @@
-background: #000000
+background: Color(0xFF000000)
 primary foreground: #F5F5F5
 secondary foreground: #9E9E9E
 primary color: #F5F5F5
