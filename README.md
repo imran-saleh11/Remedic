@@ -1,4 +1,4 @@
-# remedic
+# Remedic
 
 <div align="center">
 
